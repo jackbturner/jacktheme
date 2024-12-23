@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "nav.html" . }}
+  <div class="profile">
+	  <h1>{{ site.Title }}</h1>
+	  <img src="/profile.png" class="mepic">
+  </div>
+  <div class="postsec">
+	  <h1>Posts</h1>
+	  {{ range first 5 .Site.RegularPages }}
+	  	{{ partial "entry.html" . }}
+	  {{ end }}
+  </div>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>
